@@ -1,0 +1,30 @@
+.drop-menu{
+  display: none;
+  width: 80px;
+  height: 115px;
+  background-color: $color-light;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  > * {
+    display: block;
+    @include font(1.5rem, 2rem);
+    text-align: center;
+    cursor: pointer;
+  }
+  > a {
+    padding-top: 10px;
+  }
+}
+
+.drop-menu__header{
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+.drop-menu__line{
+  width: 40px;
+  margin-bottom: 5px;
+  background-color: $color-sand;
+}

@@ -1,0 +1,112 @@
+//анимация слайдера
+/*
+@keyframes move-right{
+  from{right: 0}
+  to{right: 50%}
+}
+/*
+@keyframes move-left{
+  from{left: }
+  to{left: }
+}*/
+/*
+.transition-right{
+    animation-name: move-right;
+    animation-duration: 2s;
+}*/
+/*
+.transition-left{
+  animation-name: move-left;
+  animation-duration: 2s;
+}*/
+
+.wrapper__about{
+  @include flex($direction: column, $align-items: center);
+}
+
+.about__text{
+  padding-bottom: 20px;
+}
+
+.about__images{
+  overflow: hidden;
+  @include media-tablet(){
+    @include flex($align-items: center);
+    width: 614px;
+  }
+}
+
+.about__image-items{
+  max-width: $content-width;
+  position: relative;
+  z-index: 1;
+  transition: transform ease-in 0.5s;
+  > * {
+    width: 34%;
+  }
+  @include media-tablet(){
+    //max-width: 614px;
+    > * {
+      width: 100%;
+    }
+  }
+}
+
+.img-item{
+  padding-right: 25px;
+  @include media-tablet(){
+    padding: 0 57px;
+  }
+  /*&_hidden{
+    display: none;
+  }*/
+}
+
+.carret{
+  display: none;
+  position: relative;
+  z-index: 2;
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    @extend %transition;
+  }
+  @include media-tablet(){
+    display: block;
+    margin-top: 45px;
+  }
+}
+
+.about__pagination{
+  @include flex();
+  margin: auto;
+  width: 78px;
+  overflow: hidden;
+  padding: 35px 0;
+  @include media-tablet(){
+    padding-top: 20px;
+    width: 130px;
+  }
+}
+
+.btn-pagination{
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.2);
+    @extend %transition;
+  }
+}
+
+.btn-circle{
+  width: 16px;
+  height: 16px;
+  margin: 5px;
+  border-radius: 50px;
+  background-color: $color-dark;
+  &_active{
+    background-color: $color-sand;
+    transition: background-color ease-in-out .4s;
+  }
+}

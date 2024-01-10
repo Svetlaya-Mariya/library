@@ -1,0 +1,43 @@
+.card__info{
+  margin-bottom: 35px;
+  @include flex(wrap);
+  @include media-tablet(){
+    justify-content: center;
+  }
+}
+
+.find-card__title{
+  text-align: center;
+}
+
+.get-card{
+  width: 456px;
+  text-align: end;
+  @include flex($direction: column, $just-cont: flex-start, $align-items: flex-end);
+  @include media-tablet(){
+    width: 600px;
+    margin-top: 16px;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.get-card__title{
+  @extend %font-add;
+}
+
+.get-card__text{
+  margin: 35px 0;
+  text-align: end;
+  @include font(2rem, 4rem, 0.04rem);
+  @include media-tablet(){
+    text-align: center;
+    margin: 40px 0;
+  }
+}
+
+.card-buttons{
+  margin-right: 0;
+  width: 170px;
+  @include flex();
+}

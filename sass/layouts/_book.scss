@@ -1,0 +1,48 @@
+.book{
+  position: relative;
+  width: 550px;
+  height: 555px;
+  padding: 15px 20px;
+  border: 1px solid $color-black;
+}
+
+.book-line{
+  width: 60px;
+  margin: 0;
+  background: $color-sand;
+  margin-bottom: 20px;
+}
+
+.book__name{
+  @include font (1.5rem, 4rem, 0.2rem, 700);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.book__autor{
+  @include font (1.5rem, 4rem, 0.2rem, 700);
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.book__discription{
+  width: 355px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  @include font (1.5rem, 4rem, 0.2rem);
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.book__image{
+  position: absolute;
+  bottom: -1px;
+  right: -40px;
+}
+
+.book__btn{
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+}
+

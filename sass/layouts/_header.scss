@@ -1,0 +1,18 @@
+.header{
+  background-color: $color-dark;
+}
+
+.header__wrapper{
+  @include flex($align-items: center, $just-cont: end);
+  position: relative;
+  z-index: 5;
+  @include media-tablet(){
+    padding: 20px;
+    //overflow: hidden;
+  }
+}
+
+.header__logo{
+  flex-grow: 2;
+}
+

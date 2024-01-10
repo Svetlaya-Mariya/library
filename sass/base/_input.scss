@@ -1,0 +1,11 @@
+.modal__input{
+  border: 1px solid $color-sand;
+  @include font(1.5rem, 2rem, 0.03rem);
+  width: 200px;
+  height: 20px;
+  color: $color-sand;
+  &_small{
+    width: 45px;
+    margin-right: 5px;
+  }
+}

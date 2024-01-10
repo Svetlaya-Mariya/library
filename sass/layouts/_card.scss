@@ -1,0 +1,56 @@
+.card{
+  border: 3px solid $color-sand;
+  margin-top: 30px;
+  @include flex($direction: column, $align-items: center);
+  //box-shadow: 0 1px 10px $color-black;
+}
+
+.card__bg{
+  background: $color-sand;
+  margin: 20px 20px 0;
+  padding: 20px 20px 25px;
+  @include font(3rem, 5rem, 0.06rem);
+  @extend %font-add;
+}
+
+.title__card{
+  @extend %font-add;
+  line-height: 5rem;
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.input__card{
+  display: block;
+  color: $color-sand;
+  @include font(3rem, 5rem, 0.06rem);
+  width: 520px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  @extend %transition;
+  &_name{
+    margin-bottom: 25px;
+  }
+}
+
+.card__button{
+  //display: none;
+  width: 244px;
+  height: 44px;
+  margin: 20px 0 30px;
+  @include font(2rem, normal, 0.1rem, 700);
+}
+
+.card__profile{
+  width: 169px;
+  @include flex();
+  margin: 15px 0 16px;
+  display: none;
+  p{
+    @include font(1rem, 2rem, 0.02rem);
+  }
+}
+
+.profile-info{
+  @include flex($direction: column, $align-items: center);
+}

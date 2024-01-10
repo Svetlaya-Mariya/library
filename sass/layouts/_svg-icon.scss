@@ -1,0 +1,11 @@
+.svg-icon{
+  display: inline-block;
+  @extend %transition;
+  &:hover{
+    transform: scale(1.2);
+  }
+}
+
+.path:hover{
+  cursor: pointer;
+}

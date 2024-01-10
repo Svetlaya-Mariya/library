@@ -1,0 +1,55 @@
+.modal{
+  width: 250px;
+  //margin: 0 auto;
+  background: $color-light;
+  position: fixed;
+  top: 20%;
+  left: calc(50% - 125px);
+  z-index: 4;
+  padding: 20px 25px;
+  .close-btn{
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.modal-login{
+  display: none;
+}
+
+.modal-registr{
+  display: none;
+}
+
+.modal__title{
+  @extend %font-add;
+  @include font(2rem, 2rem, 0.04rem);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.modal__text{
+  text-align: left;
+  @include font(1.5rem, 2rem, 0.03rem);
+  margin: 8px 0;
+}
+
+.modal__small-text{
+  text-align: left;
+  text-shadow: 0px 2px 3px 0px rgba(255, 255, 255, 0.16);
+  @include font(1rem, normal);
+  a{
+    display: inline-block;
+    margin-left: 10px;
+    color: #0C0C0E;
+    @include font(1rem, normal, 0.1rem, 700);
+    text-decoration-line: underline;
+    &:hover{
+      color: $color-sand;
+    }
+  }
+}
+
+.modal__button{
+  margin: 20px 0 10px ;
+}

@@ -1,0 +1,19 @@
+@mixin font ($size, $height, $spacing: 0, $weight: 400, $style: normal){
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $height;
+  letter-spacing: $spacing;
+}
+
+@mixin flex ($wrap: nowrap, $direction: row, $just-cont: space-between, $align-items: stretch){
+  display: flex;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $just-cont;
+}
+
+@mixin media-tablet{
+  @media (max-width: $tablet-width) { @content };
+}

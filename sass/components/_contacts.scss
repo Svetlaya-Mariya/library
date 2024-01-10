@@ -1,0 +1,32 @@
+.contacts-info{
+  @include flex(wrap);
+  padding-bottom: 40px;
+}
+
+.phone{
+  @include font(2rem, 4rem, 0.2rem);
+  font-size: 20px;
+  text-align: left;
+  margin: 20px 0;
+  &:hover a{
+    text-shadow: 1px 1px 2px $color-dark;
+    @extend %transition;
+  }
+}
+
+.text-info__phone{
+  margin: 40px 0;
+}
+
+.director-name{
+  font-weight: 700;
+}
+
+.map-info{
+  @include media-tablet(){
+    margin: 80px auto 0;
+    > iframe {
+      width: 90vw !important;
+    }
+  }
+}

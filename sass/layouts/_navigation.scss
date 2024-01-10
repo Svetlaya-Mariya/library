@@ -1,0 +1,64 @@
+.header__navigation{
+  @include media-tablet(){
+    position: fixed;
+    right: -332px;
+    top: 60px;
+    width: 332px;
+    background: $color-dark;
+  }
+}
+
+.navigation{
+  display: flex;
+  margin-right: 40px;
+  @include media-tablet(){
+    @include flex($direction: column, $align-items: center);
+    margin-right: 30px;
+    padding-top: 21px;
+  }
+}
+
+.navigation__link{
+  padding-left: 30px;
+  @include font(2rem, 5rem);
+  cursor: pointer;
+  &:hover a{
+    color: $color-sand;
+    @extend %transition;
+  }
+  > a{
+    color: $color-light;
+  }
+  @include media-tablet(){
+    margin-bottom: 30px;
+  }
+}
+
+//navigation animation
+@keyframes navigation_show {
+  from {
+    right: -332px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+.navigation-show{
+  animation-name: navigation_show;
+  animation-duration: .5s;
+}
+
+@keyframes navigation_hidd {
+  from {
+    right: 0;
+  }
+  to {
+    right: -332px;
+  }
+}
+
+.navigation-hidd{
+  animation-name: navigation_hidd;
+  animation-duration: .5s;
+}

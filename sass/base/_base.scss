@@ -1,0 +1,71 @@
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  //overflow: hidden;
+}
+
+body{
+  @extend %font-basic;
+  font-size: 2rem;
+}
+
+h1{
+  color: $color-light;
+  @extend %font-add;
+  @include font (3rem, 5rem, 0.06rem);
+}
+
+h2{
+  padding: 20px 0;
+  color: $color-dark;
+  @extend %font-add;
+  @include font (4rem, 4rem, 0.2rem);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+h3{
+  @include font($size: 3rem, $height: normal, $spacing: 0.06rem);
+}
+
+h4{
+  color: $color-black;
+  @extend %font-add;
+  @include font (2rem, 4rem, 0.2rem);
+  text-transform: capitalize;
+}
+
+h5 {
+  color: $color-black;
+  @extend %font-basic;
+  @include font (2rem, 4rem, 0.2rem, 700);
+  text-transform: capitalize;
+}
+
+p{
+  color: $color-black;
+  text-align: center;
+  @include font (2rem, 4rem);
+}
+
+a{
+  text-decoration: none;
+  @extend %transition;
+  &:hover{
+    color: $color-sand;
+  }
+}
+
+hr{
+  height: 1px;
+  width: 50px;
+  background-color: $color-dark;
+  border: none;
+  margin-bottom: 40px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
