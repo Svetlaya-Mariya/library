@@ -1214,26 +1214,6 @@ ul {
   text-transform: uppercase;
 }
 
-/*
-@keyframes move-right{
-  from{right: 0}
-  to{right: 50%}
-}
-/*
-@keyframes move-left{
-  from{left: }
-  to{left: }
-}*/
-/*
-.transition-right{
-    animation-name: move-right;
-    animation-duration: 2s;
-}*/
-/*
-.transition-left{
-  animation-name: move-left;
-  animation-duration: 2s;
-}*/
 .wrapper__about {
   display: flex;
   flex-wrap: nowrap;
@@ -1301,6 +1281,10 @@ ul {
     display: block;
     margin-top: 45px;
   }
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .about__pagination {

@@ -17,12 +17,26 @@ function changePoint(index){
 
 function showSlide(){
     slideWidth = carousel.offsetWidth;
-    imageWidth = document.querySelector('.img-item').offsetWidth;
+    if (slideWidth > 969 & currentPoint > 2){
+      console.log('more 1024');
+      currentPoint = 2;
+      changePoint(2)
+    }
     rollSlide();
 }
 
 function rollSlide(){
+  imageWidth = document.querySelector('.img-item').offsetWidth;
   IMAGES.style.transform = `translateX(${-currentPoint * imageWidth}px)`;
+  if (currentPoint == 4){
+    arrowRight.classList.add('hidden');
+  }
+  else arrowRight.classList.remove('hidden');
+  if (currentPoint == 0){
+    arrowLeft.classList.add('hidden');
+  }
+  else arrowLeft.classList.remove('hidden');
+  console.log(slideWidth);
   console.log(currentPoint);
 }
 
@@ -52,6 +66,7 @@ export function slider(){
   arrowRight.addEventListener('click', rollRight);
   POINTS.forEach((elem, index) => {elem.addEventListener('click', function(){
     currentPoint = index;
+    console.log(index);
     changePoint(index);
     rollSlide();
   })})

@@ -1,25 +1,3 @@
-//анимация слайдера
-/*
-@keyframes move-right{
-  from{right: 0}
-  to{right: 50%}
-}
-/*
-@keyframes move-left{
-  from{left: }
-  to{left: }
-}*/
-/*
-.transition-right{
-    animation-name: move-right;
-    animation-duration: 2s;
-}*/
-/*
-.transition-left{
-  animation-name: move-left;
-  animation-duration: 2s;
-}*/
-
 .wrapper__about{
   @include flex($direction: column, $align-items: center);
 }
@@ -45,7 +23,6 @@
     width: 34%;
   }
   @include media-tablet(){
-    //max-width: 614px;
     > * {
       width: 100%;
     }
@@ -75,6 +52,10 @@
     display: block;
     margin-top: 45px;
   }
+}
+
+.hidden{
+  visibility: hidden;
 }
 
 .about__pagination{
