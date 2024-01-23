@@ -36,8 +36,6 @@ function rollSlide(){
     arrowLeft.classList.add('hidden');
   }
   else arrowLeft.classList.remove('hidden');
-  console.log(slideWidth);
-  console.log(currentPoint);
 }
 
 function rollRight(){
@@ -66,7 +64,6 @@ export function slider(){
   arrowRight.addEventListener('click', rollRight);
   POINTS.forEach((elem, index) => {elem.addEventListener('click', function(){
     currentPoint = index;
-    console.log(index);
     changePoint(index);
     rollSlide();
   })})

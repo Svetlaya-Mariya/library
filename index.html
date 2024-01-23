@@ -246,24 +246,24 @@
         <p class="favorites__pick-season">Pick favorites of season</p>
         <ul class="favorites__seasons">
           <li class="season">
-            <input class="season__radio" type="radio" name="name" id="winter" checked>
+            <input class="season__radio" type="radio" name="season" id="winter" value="winter" checked>
             <label class="season__name season__name_checked" for="winter">Winter</label>
           </li>
           <li class="season">
-            <input class="season__radio" type="radio" name="name" id="spring">
+            <input class="season__radio" type="radio" name="season" id="spring" value="spring">
             <label class="season__name" for="spring">Spring</label>
           </li>
           <li class="season">
-            <input class="season__radio" type="radio" name="name" id="summer">
+            <input class="season__radio" type="radio" name="season" id="summer" value="summer">
             <label class="season__name" for="summer">Summer</label>
           </li>
           <li class="season">
-            <input class="season__radio" type="radio" name="name" id="autumn">
+            <input class="season__radio" type="radio" name="season" id="autumn" value="autumn">
             <label class="season__name" for="autumn">Autumn</label>
           </li>
         </ul>
         <div class="favorite__books">
-          <div class="books books__winter">
+          <div class="books books__winter books-active">
             <article class="book">
               <h4>Staff Picks</h4>
               <hr class="book-line">
@@ -298,7 +298,8 @@
               <p class="book__autor">By Clive Irving</p>
               <p class="book__discription">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
               <img class="book__image" src="assets/image/books/book_winter_4.jpg" alt="book-winter-4">
-              <button class="button book__btn button_disabled" disabled>Own</button>
+              <!--<button class="button book__btn button_disabled" disabled>Own</button> -->
+              <button class="button book__btn button_active">Buy</button>
             </article>
           </div>
           <div class="books books__spring">
@@ -336,7 +337,7 @@
               <p class="book__autor"> By Angie Cruz</p>
               <p class="book__discription">A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.</p>
               <img class="book__image" src="assets/image/books/book_spring_4.jpg" alt="book-spring-4">
-              <button class="button book__btn button_disabled" disabled>Own</button>
+              <button class="button book__btn button_active">Buy</button>
             </article>
           </div>
           <div class=" books books__summer">

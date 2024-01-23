@@ -1322,6 +1322,7 @@ ul {
   background-color: #0C0C0E;
 }
 .btn-circle_active {
+  cursor: auto;
   background-color: #BB945F;
   transition: background-color ease-in-out 0.4s;
 }
@@ -1340,6 +1341,7 @@ ul {
 }
 
 .favorites__seasons {
+  top: 20px;
   max-width: 700px;
   margin: 35px 0;
   display: flex;
@@ -1348,8 +1350,26 @@ ul {
   align-items: stretch;
   justify-content: space-between;
 }
+@media (max-width: 1024px) {
+  .favorites__seasons {
+    max-width: 100%;
+    top: 0;
+    margin: 0;
+    padding: 25px;
+    position: sticky;
+    background-color: white;
+    z-index: 2;
+  }
+}
+
+.favorite__books {
+  position: relative;
+}
 
 .books {
+  position: absolute;
+  top: 0;
+  opacity: 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -1358,6 +1378,7 @@ ul {
   row-gap: 40px;
   column-gap: 45px;
   margin-right: 40px;
+  animation: hiddImage 2s linear;
 }
 @media (max-width: 1024px) {
   .books {
@@ -1369,10 +1390,32 @@ ul {
   }
 }
 
-.books__spring, .books__summer, .books__autumn {
-  display: none;
+.books-active {
+  position: relative;
+  opacity: 1;
+  animation: showImage 2s linear;
 }
 
+@keyframes showImage {
+  from {
+    position: relative;
+    opacity: 0;
+  }
+  to {
+    position: absolute;
+    opacity: 1;
+  }
+}
+@keyframes hiddImage {
+  from {
+    position: absolute;
+    opacity: 1;
+  }
+  to {
+    position: relative;
+    opacity: 0;
+  }
+}
 .coffee-shop__text {
   font-size: 2rem;
   font-style: normal;

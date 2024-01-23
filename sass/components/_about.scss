@@ -87,6 +87,7 @@
   border-radius: 50px;
   background-color: $color-dark;
   &_active{
+    cursor: auto;
     background-color: $color-sand;
     transition: background-color ease-in-out .4s;
   }
