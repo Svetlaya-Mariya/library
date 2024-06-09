@@ -45,7 +45,7 @@
   width: 169px;
   @include flex();
   margin: 15px 0 16px;
-  display: none;
+  //display: none;
   p{
     @include font(1rem, 2rem, 0.02rem);
   }

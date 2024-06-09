@@ -2,10 +2,24 @@
   display: inline-block;
   @extend %transition;
   &:hover{
+    cursor: pointer;
     transform: scale(1.2);
   }
 }
 
-.path:hover{
-  cursor: pointer;
+.title-name {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  border-radius: 50px;
+  line-height: 20;
+  background-color: $color-light;
+  color: $color-sand;
+}
+
+.hidd-title-name{
+  display: none;
 }

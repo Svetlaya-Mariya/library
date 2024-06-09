@@ -1,11 +1,11 @@
 .modal-buy-card{
-  width: 650px;
+  width: 640px;
   position: fixed;
-  top: 0;
+  @extend %hidden-window;
+  z-index: 3;
+  top: 10%;
   left: calc(50% - 325px);
-  z-index: 4;
   background: $color-light;
-  display: none;
 }
 
 .modal-buy-card__title{
