@@ -38,33 +38,35 @@
   @include media-tablet(){
     @include flex($wrap: wrap, $just-cont: center);
   }
-  animation: hiddImage 2s linear;
 }
 
-.books-active{
+.books_active{
   position: relative;
   opacity: 1;
-  animation: showImage 2s linear;
 }
 
-@keyframes showImage {
-  from {
-    position: relative;
+.fade-in{
+  animation: fadeIn 3s linear;
+}
+
+.books_passive{
+  animation: fadeOut 1s linear;
+}
+
+@keyframes fadeIn{
+  0% {
     opacity: 0;
   }
-  to {
-    position: absolute;
+  100% {
     opacity: 1;
   }
 }
 
-@keyframes hiddImage {
-  from {
-    position: absolute;
+@keyframes fadeOut {
+  0% {
     opacity: 1;
   }
-  to {
-    position: relative;
+  100% {
     opacity: 0;
   }
 }

@@ -1,24 +1,16 @@
-.modal{
+.modal-registr, .modal-login{
+  //position: absolute;
   width: 250px;
-  //margin: 0 auto;
-  background: $color-light;
-  position: fixed;
-  top: 20%;
-  left: calc(50% - 125px);
-  z-index: 4;
   padding: 20px 25px;
+  @extend %hidden-window;
   .close-btn{
     top: 10px;
     right: 10px;
   }
 }
 
-.modal-login{
-  display: none;
-}
-
-.modal-registr{
-  display: none;
+.open-window{
+  @extend %open-window;
 }
 
 .modal__title{
@@ -52,4 +44,13 @@
 
 .modal__button{
   margin: 20px 0 10px ;
+}
+
+.modal-login__error-message{
+  font-size: 1rem;
+  line-height: 2rem;
+  color: red;
+  text-align: start;
+  padding: 0;
+  margin: 0;
 }

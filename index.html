@@ -25,170 +25,196 @@
           <li class="navigation__link"><a href="#library-card">Library Card</a></li>
         </ul>
       </nav>
-      <div class="svg-icon">
-        <object class="svg" type="image/svg+xml" data="assets/icons/profile.svg">
-          Your browser does not support SVG
-        </object>
+      <div class="header__user">
+        <div class="svg-icon" id="user-icon">
+          <img src="assets/icons/profile.svg" alt="icon profile" class="svg">
+          <div class="title-name hidd-title-name"></div>
+        </div>
+        <div class="drop-menu drop-menu_no-auth">
+          <p class="drop-menu__header">Profile</p>
+          <hr class="drop-menu__line">
+          <a class="login">Log In</a>
+          <a class="registr">Register</a>
+        </div>
+        <div class="drop-menu drop-menu_auth">
+          <p class="drop-menu__header_auth">Profile</p>
+          <hr class="drop-menu__line">
+          <a class="my-profile">My profile</a>
+          <a class="logout">Log Out</a>
+        </div>
       </div>
       <span class="hamburger header__hamburger">
         <span class="hamburger__line"></span>
       </span>
-      <div class="drop-menu">
-        <p class="drop-menu__header">Profile</p>
-        <hr class="drop-menu__line">
-        <a class="login">Log In</a>
-        <a class="register">Register</a>
-      </div>
-      <div class="drop-menu">
-        <p class="drop-menu__header">Profile</p>
-        <hr class="drop-menu__line">
-        <a class="my-profile">My profile</a>
-        <a class="logout">Log Out</a>
-      </div>
     </div>
+    <section class="modal">
+      <form action="#" name="form" class="modal__window modal-login">
+        <button class="close-btn">
+          <img src="assets/icons/close_btn.svg" alt="close button">
+        </button>
+        <p class="modal__title">
+          Login
+        </p>
+        <p class="modal__text">
+          E-mail or readers card
+        </p>
+        <input class="modal__input" id="login-name" type="text" required>
+        <p class="modal__text">
+          Password
+        </p>
+        <input class="modal__input" id="login-password" type="password" name="pw" pattern=".{8,}" title="8 or more characters" required>
+        <p class="modal-login__error-message"></p>
+        <button id="enter-button" class="button modal__button">Log In</button>
+        <p class="modal__small-text">
+          Don’t have an account? <a href="#" id="link-to-reg">Register</a>
+        </p>
+      </form>
+      <form action="#" name="form" class="modal__window modal-registr">
+        <button class="close-btn">
+          <img src="assets/icons/close_btn.svg" alt="close button">
+        </button>
+        <p class="modal__title">
+          Register
+        </p>
+        <p class="modal__text">
+          First name
+        </p>
+        <input class="modal__input" id="reg-first-name" type="text" name="first-name" required>
+        <p class="modal__text">
+          Last name
+        </p>
+        <input class="modal__input" id="reg-last-name" type="text" required>
+        <p class="prompt-text prompt-last-name">Please, enter your last name</p>
+        <p class="modal__text">
+          E-mail
+        </p>
+        <input class="modal__input" id="reg-email" type="email" required>
+        <p class="modal__text">
+          Password
+        </p>
+        <input class="modal__input" id="reg-password" type="password" name="pw" pattern=".{8,}" title="8 or more characters" required>
+        <button type="submit" class="button modal__button button__registration">Sign Up</button>
+        <p class="modal__small-text">
+          Already have an account? <a href="#" id="link-to-log">Login</a>
+        </p>
+      </form>
+      <form action="#" name="form" class="modal__window modal-profile">
+        <div class="modal-profile__name-and-avatar">
+          <div class="modal-profile__avatar">
+            <p id="modal-profile__letters"></p>
+          </div>
+          <p class="modal-profile__name"></p>
+        </div>
+        <div class="modal-profile__content">
+          <h2 class="modal-profile__title">My profile</h2>
+          <div class="modal-profile__icons">
+            <div class="icon-info">
+              <p class="icon-info__name">Visits</p>
+              <object class="icon-info__svg" type="image/svg+xml" data="assets/icons/visits.svg">
+                Your browser does not support SVG
+              </object>
+              <p id="count-visit" class="icon-info__digit"></p>
+            </div>
+            <div class="icon-info">
+              <p class="icon-info__name">Bonuses</p>
+              <object class="icon-info__svg" type="image/svg+xml" data="assets/icons/bonuses.svg">
+                Your browser does not support SVG
+              </object>
+              <p class="icon-info__digit">1240</p>
+            </div>
+            <div class="icon-info">
+              <p class="icon-info__name">Books</p>
+              <object class="icon-info__svg" type="image/svg+xml" data="assets/icons/books.svg">
+                Your browser does not support SVG
+              </object>
+              <p id="count-books" class="icon-info__digit"></p>
+            </div>
+          </div>
+          <p class="modal-profile__rented">Rented books</p>
+          <ul id="own-books" class="modal-profile__books">
+
+          </ul>
+          <p class="modal-profile__card-number">
+            Card number<span class="card-number">F00234030</span>
+            <img id="icon-copy" class="icon-copy" src="assets/icons/icon-copy.svg" alt="icon copy">
+          </p>
+        </div>
+        <button class="close-btn">
+          <img src="assets/icons/close_btn.svg" alt="close button">
+        </button>
+      </form>
+      <form action="#" name="form" class="modal__window modal-buy-card">
+        <div class="modal-buy-card__title">
+          <button class="close-btn close-btn_white">
+            <img src="assets/icons/close_btn_white.svg" alt="close button">
+          </button>
+          <h2>Buy a library card</h2>
+        </div>
+        <div class="modal-buy-card__content">
+          <div class="modal-buy-card__form">
+            <form action="#" name="modal">
+              <p class="modal__text">
+                Bank card number
+              </p>
+              <input class="modal__input bank-card" id="bank-card-number" type="text" maxlength="19" placeholder="0000 0000 0000 0000" required>
+              <p class="modal__text">
+                Expiration code
+              </p>
+              <select class="modal__input modal__input_small bank-card" id="bank-card-month" required>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <select class="modal__input modal__input_small bank-card" id="bank-card-year" required>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+              </select>
+              <p class="modal__text">
+                CVC
+              </p>
+              <input class="modal__input modal__input_small bank-card" id="bank-card-cvc" maxlength="3" type="text" required>
+            </form>
+            <form class="form-down" action="#">
+              <p class="modal__text ">
+                Cardholder name
+              </p>
+              <input class="modal__input bank-card" id="bank-card-holdername" type="text" required>
+              <p class="modal__text">
+                Postal code
+              </p>
+              <input class="modal__input bank-card" id="bank-card-postalcode" type="text" maxlength="6" required>
+              <p class="modal__text">
+                City / Town
+              </p>
+              <input class="modal__input bank-card" type="text" id="bank-card-city" required>
+              <button class="button modal__button" id="button-buy-card" disabled>Buy</button>
+              <span class="modal-buy-card__price">$ 25.00</span>
+            </form>
+          </div>
+          <div class="modal-buy-card__text">
+            If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+          </div>
+        </div>
+      </form>
+    </section>
   </header>
-  <div class="modal modal-login">
-    <button class="close-btn">
-      <img src="assets/icons/close_btn.svg" alt="close button">
-    </button>
-    <p class="modal__title">
-      Login
-    </p>
-    <p class="modal__text">
-      E-mail or readers card
-    </p>
-    <input class="modal__input" type="text">
-    <p class="modal__text">
-      Password
-    </p>
-    <input class="modal__input" type="text">
-    <button class="button modal__button">Log In</button>
-    <p class="modal__small-text">
-      Don’t have an account? <a href="#">Register</a>
-    </p>
-  </div>
-  <div class="modal modal-registr">
-    <button class="close-btn">
-      <img src="assets/icons/close_btn.svg" alt="close button">
-    </button>
-    <p class="modal__title">
-      Register
-    </p>
-    <p class="modal__text">
-      First name
-    </p>
-    <input class="modal__input" type="text">
-    <p class="modal__text">
-      Last name
-    </p>
-    <input class="modal__input" type="text">
-    <p class="modal__text">
-      E-mail
-    </p>
-    <input class="modal__input" type="text">
-    <p class="modal__text">
-      Password
-    </p>
-    <input class="modal__input" type="text">
-    <button class="button modal__button">Sign Up</button>
-    <p class="modal__small-text">
-      Already have an account? <a href="#">Login</a>
-    </p>
-  </div>
-  <div class="modal-profile">
-    <div class="modal-profile__name-and-avatar">
-      <div class="modal-profile__avatar">
-        <p>JD</p>
-      </div>
-      <p class="modal-profile__name">
-        John Doe
-      </p>
-    </div>
-    <div class="modal-profile__content">
-      <h2 class="modal-profile__title">My profile</h2>
-      <div class="modal-profile__icons">
-        <div class="icon-info">
-          <p class="icon-info__name">Visits</p>
-          <object class="icon-info__svg" type="image/svg+xml" data="assets/icons/visits.svg">
-            Your browser does not support SVG
-          </object>
-          <p class="icon-info__digit">23</p>
-        </div>
-        <div class="icon-info">
-          <p class="icon-info__name">Bonuses</p>
-          <object class="icon-info__svg" type="image/svg+xml" data="assets/icons/bonuses.svg">
-            Your browser does not support SVG
-          </object>
-          <p class="icon-info__digit">1240</p>
-        </div>
-        <div class="icon-info">
-          <p class="icon-info__name">Books</p>
-          <object class="icon-info__svg" type="image/svg+xml" data="assets/icons/books.svg">
-            Your browser does not support SVG
-          </object>
-          <p class="icon-info__digit">2</p>
-        </div>
-      </div>
-      <p class="modal-profile__rented">Rented books</p>
-      <ul class="modal-profile__books">
-        <li>The Last Queen, Clive Irving</li>
-        <li>Dominicana, Angie Cruz</li>
-      </ul>
-      <p class="modal-profile__card-number">
-        Card number<span class="card-number">F00234030</span>
-        <img src="assets/icons/icon-copy.svg" alt="icon copy" class="icon-copy">
-      </p>
-    </div>
-    <button class="close-btn">
-      <img src="assets/icons/close_btn.svg" alt="close button">
-    </button>
-  </div>
-  <div class="modal-buy-card">
-    <div class="modal-buy-card__title">
-      <button class="close-btn close-btn_white">
-        <img src="assets/icons/close_btn_white.svg" alt="close button">
-      </button>
-      <h2>Buy a library card</h2>
-    </div>
-    <div class="modal-buy-card__content">
-      <div class="modal-buy-card__form">
-        <form action="#">
-          <p class="modal__text">
-            Bank card number
-          </p>
-          <input class="modal__input" type="text">
-          <p class="modal__text">
-            Expiration code
-          </p>
-          <input class="modal__input modal__input_small" type="text">
-          <input class="modal__input modal__input_small" type="text">
-          <p class="modal__text">
-            CVC
-          </p>
-          <input class="modal__input modal__input_small" type="text">
-        </form>
-        <form class="form-down" action="#">
-          <p class="modal__text ">
-            Cardholder name
-          </p>
-          <input class="modal__input" type="text">
-          <p class="modal__text">
-            Postal code
-          </p>
-          <input class="modal__input" type="text">
-          <p class="modal__text">
-            City / Town
-          </p>
-          <input class="modal__input" type="text">
-          <button class="button modal__button">Buy</button>
-          <span class="modal-buy-card__price">$ 25.00</span>
-        </form>
-      </div>
-      <div class="modal-buy-card__text">
-        If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
-      </div>
-    </div>
-  </div>
   <main class="main">
     <section class="welcome">
       <div class="wrapper welcome__wrapper">
@@ -263,7 +289,7 @@
           </li>
         </ul>
         <div class="favorite__books">
-          <div class="books books__winter books-active">
+          <div class="books books__winter books_active">
             <article class="book">
               <h4>Staff Picks</h4>
               <hr class="book-line">
@@ -271,7 +297,7 @@
               <p class="book__autor">By Sunyi Dean</p>
               <p class="book__discription">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
               <img class="book__image" src="assets/image/books/book_winter_1.jpg" alt="book-winter-1">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -280,7 +306,7 @@
               <p class="book__autor">By Rachel Harrison</p>
               <p class="book__discription">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
               <img class="book__image" src="assets/image/books/book_winter_2.jpg" alt="book-winter-2">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -289,7 +315,7 @@
               <p class="book__autor">By Erich Auerbach</p>
               <p class="book__discription">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
               <img class="book__image" src="assets/image/books/book_winter_3.jpg" alt="book-winter-3">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -299,7 +325,7 @@
               <p class="book__discription">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
               <img class="book__image" src="assets/image/books/book_winter_4.jpg" alt="book-winter-4">
               <!--<button class="button book__btn button_disabled" disabled>Own</button> -->
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
           </div>
           <div class="books books__spring">
@@ -310,7 +336,7 @@
               <p class="book__autor">By Stephen King</p>
               <p class="book__discription">Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.</p>
               <img class="book__image" src="assets/image/books/book_spring_1.jpg" alt="book-spring-1">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -319,7 +345,7 @@
               <p class="book__autor">By Toni Jenson</p>
               <p class="book__discription">This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.</p>
               <img class="book__image" src="assets/image/books/book_spring_2.jpg" alt="book-spring-2">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -328,7 +354,7 @@
               <p class="book__autor">By Alexandra Chang</p>
               <p class="book__discription">A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.</p>
               <img class="book__image" src="assets/image/books/book_spring_3.jpg" alt="book-spring-3">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -337,10 +363,10 @@
               <p class="book__autor"> By Angie Cruz</p>
               <p class="book__discription">A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.</p>
               <img class="book__image" src="assets/image/books/book_spring_4.jpg" alt="book-spring-4">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
           </div>
-          <div class=" books books__summer">
+          <div class="books books__summer">
             <article class="book">
               <h4>Staff Picks</h4>
               <hr class="book-line">
@@ -348,7 +374,7 @@
               <p class="book__autor">By Pablo Fajardo & ​​Sophie Tardy-Joubert</p>
               <p class="book__discription">Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil fields did to the Amazon and her people</p>
               <img class="book__image" src="assets/image/books/book_summer_1.jpg" alt="book-summer-1">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -357,7 +383,7 @@
               <p class="book__autor">By Yvon Chouinard</p>
               <p class="book__discription">Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business Unusual.</p>
               <img class="book__image" src="assets/image/books/book_summer_2.jpg" alt="book-summer-2">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -366,7 +392,7 @@
               <p class="book__autor">By Brenda Shaughnessy</p>
               <p class="book__discription">This collection of bold and scathingly beautiful feminist poems imagines what comes after our current age of environmental destruction, racism, sexism, and divisive politics.</p>
               <img class="book__image" src="assets/image/books/book_summer_3.jpg" alt="book-summer-3">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -375,10 +401,10 @@
               <p class="book__autor">By Kiana Davenport</p>
               <p class="book__discription">An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.</p>
               <img class="book__image" src="assets/image/books/book_summer_4.jpg" alt="book-summer-4">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
           </div>
-          <div class=" books books__autumn">
+          <div class="books books__autumn">
             <article class="book">
               <h4>Staff Picks</h4>
               <hr class="book-line">
@@ -386,7 +412,7 @@
               <p class="book__autor">By Renia White</p>
               <p class="book__discription">White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity.</p>
               <img class="book__image" src="assets/image/books/book_autumn_1.jpg" alt="book-autumn-1">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -395,7 +421,7 @@
               <p class="book__autor">By Lou Ureneck</p>
               <p class="book__discription">The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide</p>
               <img class="book__image" src="assets/image/books/book_autumn_2.jpg" alt="book-autumn-2">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -404,7 +430,7 @@
               <p class="book__autor">By Howard Bryant</p>
               <p class="book__discription">With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?</p>
               <img class="book__image" src="assets/image/books/book_autumn_3.jpg" alt="book-autumn-3">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
             <article class="book">
               <h4>Staff Picks</h4>
@@ -413,7 +439,7 @@
               <p class="book__autor">By Megan Milks</p>
               <p class="book__discription">Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.</p>
               <img class="book__image" src="assets/image/books/book_autumn_4.jpg" alt="book-autumn-4">
-              <button class="button book__btn button_active">Buy</button>
+              <button class="button book__btn button_active" id="book_btn">Buy</button>
             </article>
           </div>
         </div>
@@ -532,21 +558,22 @@
         <div class="card__info">
           <div class="find-card">
             <h3 class="find-card__title">Find your Library card</h3>
+            <h3 class="find-card__title card__info_hidden">Your Library card</h3>
             <form action="#">
               <div class="card">
                 <div class="card__bg">
                   <h3 class="title__card">Brooklyn Public Library</h3>
-                    <input class="input__card input__card_name" type="text" pattern="[A-Za-z ]{6,}" placeholder="Reader's name">
-                    <input class="input__card" type="text" pattern="[0-9 -]" placeholder="Card number">
+                    <input class="input__card input__card_name" id="input__card_name" type="text" name="card_name" pattern="[A-Za-z]{6,}" placeholder="Reader's name">
+                    <input class="input__card" id="input__card_number" type="text" placeholder="Card number">
                 </div>
-                <button class="button card__button">Check the card</button>
-                <div class="card__profile">
+                <button class="button card__button" id="card_bth_profile">Check the card</button>
+                <div class="card__profile card__info_hidden" id="card_bth_profile">
                   <div class="profile-info">
                     <p class="profile-info__name">Visits</p>
                     <object type="image/svg+xml" data="assets/icons/visits.svg">
                       Your browser does not support SVG
                     </object>
-                    <p class="profile-info__digit">23</p>
+                    <p id="count-visit" class="profile-info__digit"></p>
                   </div>
                   <div class="profile-info">
                     <p class="profile-info__name">Bonuses</p>
@@ -560,21 +587,33 @@
                     <object type="image/svg+xml" data="assets/icons/books.svg">
                       Your browser does not support SVG
                     </object>
-                    <p class="profile-info__digit">2</p>
+                    <p id="count-books" class="profile-info__digit"></p>
                   </div>
                 </div>
               </div>
           </form>
           </div>
           <div class="get-card">
-            <h3 class="get-card__title">Get a reader card</h3>
-            <p class="get-card__text">
-              You will be able to see a reader card after logging into account or you can register a new account
-            </p>
-            <div class="card-buttons">
-              <button class="button">Sign Up</button>
-              <button class="button">Log in</button>
+            <div class="get-card-info">
+              <h3 class="get-card__title">Get a reader card</h3>
+              <p class="get-card__text">
+                You will be able to see a reader card after logging into account or you can register a new account
+              </p>
+              <div class="card-buttons">
+                <button class="button button_singup">Sign Up</button>
+                <button class="button button_login">Log in</button>
+              </div>
             </div>
+            <div class="get-card-info card__info_hidden">
+              <h3 class="get-card__title">Visit your profile</h3>
+              <p class="get-card__text">
+                With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.
+              </p>
+              <button class="button" id="button_profile">Profile</button>
+            </div>
+          </div>
+        </div>
+
           </div>
         </div>
       </div>
@@ -624,7 +663,6 @@
       </div>
     </div>
   </footer>
-  <script src="discription.js"></script>
   <script type="module" src="index.js"></script>
 </body>
 </html>

@@ -353,6 +353,30 @@ h5, body {
   font-family: "Forum", cursive;
 }
 
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s ease;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+  transition: all 1s ease;
+}
+
+.modal-buy-card, .modal-registr, .modal-login, .modal-profile {
+  opacity: 0;
+  transform: translate(0px, -100%);
+  transition: all 1s ease;
+}
+
+.open-window {
+  opacity: 1;
+  transform: translate(0px, 0%);
+  transition: all 1s ease;
+}
+
 html {
   font-size: 10px;
   scroll-behavior: smooth;
@@ -567,7 +591,7 @@ ul {
   align-items: center;
   justify-content: end;
   position: relative;
-  z-index: 5;
+  z-index: 2;
 }
 @media (max-width: 1024px) {
   .header__wrapper {
@@ -577,6 +601,10 @@ ul {
 
 .header__logo {
   flex-grow: 2;
+}
+
+.header__user {
+  position: relative;
 }
 
 @media (max-width: 1024px) {
@@ -756,6 +784,7 @@ ul {
 
 .book__btn {
   position: absolute;
+  z-index: 3;
   left: 20px;
   bottom: 15px;
 }
@@ -822,7 +851,6 @@ ul {
   align-items: stretch;
   justify-content: space-between;
   margin: 15px 0 16px;
-  display: none;
 }
 .card__profile p {
   font-size: 1rem;
@@ -844,22 +872,37 @@ ul {
   display: inline-block;
 }
 .svg-icon:hover {
+  cursor: pointer;
   transform: scale(1.2);
 }
 
-.path:hover {
-  cursor: pointer;
+.title-name {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  border-radius: 50px;
+  line-height: 20;
+  background-color: #FFFFFF;
+  color: #BB945F;
+}
+
+.hidd-title-name {
+  display: none;
 }
 
 .drop-menu {
-  display: none;
   width: 80px;
   height: 115px;
   background-color: #FFFFFF;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 27px;
+  right: 0px;
   z-index: 2;
+  transform: scaleY(0);
+  transform-origin: 0 0;
 }
 .drop-menu > * {
   display: block;
@@ -871,10 +914,43 @@ ul {
   text-align: center;
   cursor: pointer;
 }
+.drop-menu > .drop-menu__header_auth {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0;
+}
 .drop-menu > a {
   padding-top: 10px;
 }
 
+.drop-menu_show {
+  transform: scaleY(1);
+  animation: showDropMenu 1s;
+}
+
+.drop-menu_hidd {
+  transform: scaleY(0);
+  animation: hiddDropMenu 0.5s;
+}
+
+@keyframes showDropMenu {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes hiddDropMenu {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
 .drop-menu__header {
   font-weight: 700;
   padding: 5px 0;
@@ -886,12 +962,35 @@ ul {
   background-color: #BB945F;
 }
 
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__window {
+  position: absolute;
+  top: 20%;
+  left: calc(50% - 125px);
+  background: #FFFFFF;
+}
+
+.prompt-text {
+  display: none;
+  line-height: normal;
+  font-size: 8pt;
+  color: #CB8C37;
+}
+
 .modal-profile {
   position: fixed;
   display: flex;
-  display: none;
   z-index: 3;
-  top: calc(50% - 200px);
+  top: 20%;
   left: calc(50% - 300px);
   background-color: #FFFFFF;
 }
@@ -901,6 +1000,7 @@ ul {
 }
 
 .modal-profile__name-and-avatar {
+  max-width: 170px;
   background-color: #0C0C0E;
   padding: 139px 25px 136px;
   display: flex;
@@ -936,6 +1036,7 @@ ul {
 .modal-profile__name {
   background-color: #FFFFFF;
   padding: 5px 15px;
+  word-break: break-all;
 }
 
 .modal-profile__content {
@@ -998,9 +1099,12 @@ ul {
 }
 
 .modal-profile__books {
+  width: 350px;
+  height: 70px;
   list-style: disc;
   padding-left: 30px;
   margin-bottom: 30px;
+  overflow: scroll;
 }
 .modal-profile__books li {
   font-size: 2rem;
@@ -1008,8 +1112,12 @@ ul {
   font-weight: 400;
   line-height: 2rem;
   letter-spacing: 0.2rem;
+  white-space: nowrap;
   padding-bottom: 10px;
   padding-right: 38.5px;
+}
+.modal-profile__books li:first-letter {
+  text-transform: uppercase;
 }
 
 .modal-profile__card-number {
@@ -1032,26 +1140,19 @@ ul {
   color: #BB945F;
 }
 
-.modal {
+.icon-copy:hover {
+  transform: scale(1.2);
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.modal-registr, .modal-login {
   width: 250px;
-  background: #FFFFFF;
-  position: fixed;
-  top: 20%;
-  left: calc(50% - 125px);
-  z-index: 4;
   padding: 20px 25px;
 }
-.modal .close-btn {
+.modal-registr .close-btn, .modal-login .close-btn {
   top: 10px;
   right: 10px;
-}
-
-.modal-login {
-  display: none;
-}
-
-.modal-registr {
-  display: none;
 }
 
 .modal__title {
@@ -1102,14 +1203,22 @@ ul {
   margin: 20px 0 10px;
 }
 
+.modal-login__error-message {
+  font-size: 1rem;
+  line-height: 2rem;
+  color: red;
+  text-align: start;
+  padding: 0;
+  margin: 0;
+}
+
 .modal-buy-card {
-  width: 650px;
+  width: 640px;
   position: fixed;
-  top: 0;
+  z-index: 3;
+  top: 10%;
   left: calc(50% - 325px);
-  z-index: 4;
   background: #FFFFFF;
-  display: none;
 }
 
 .modal-buy-card__title {
@@ -1378,7 +1487,6 @@ ul {
   row-gap: 40px;
   column-gap: 45px;
   margin-right: 40px;
-  animation: hiddImage 2s linear;
 }
 @media (max-width: 1024px) {
   .books {
@@ -1390,29 +1498,32 @@ ul {
   }
 }
 
-.books-active {
+.books_active {
   position: relative;
   opacity: 1;
-  animation: showImage 2s linear;
 }
 
-@keyframes showImage {
-  from {
-    position: relative;
+.fade-in {
+  animation: fadeIn 3s linear;
+}
+
+.books_passive {
+  animation: fadeOut 1s linear;
+}
+
+@keyframes fadeIn {
+  0% {
     opacity: 0;
   }
-  to {
-    position: absolute;
+  100% {
     opacity: 1;
   }
 }
-@keyframes hiddImage {
-  from {
-    position: absolute;
+@keyframes fadeOut {
+  0% {
     opacity: 1;
   }
-  to {
-    position: relative;
+  100% {
     opacity: 0;
   }
 }
@@ -1559,7 +1670,7 @@ ul {
   text-align: center;
 }
 
-.get-card {
+.get-card-info {
   width: 456px;
   text-align: end;
   display: flex;
@@ -1569,7 +1680,7 @@ ul {
   justify-content: flex-start;
 }
 @media (max-width: 1024px) {
-  .get-card {
+  .get-card-info {
     width: 600px;
     margin-top: 16px;
     text-align: center;
@@ -1591,6 +1702,10 @@ ul {
     text-align: center;
     margin: 40px 0;
   }
+}
+
+.card__info_hidden {
+  display: none;
 }
 
 .card-buttons {

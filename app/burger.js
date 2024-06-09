@@ -17,7 +17,7 @@ export function burger(){
     NAVIGATION.style.right = '0px';
   }
  //hidd menu
-const hiddMenu = (e) => {
+  const hiddMenu = (e) => {
   HAMBURGER.classList.remove('cross');
   BURGERLINE.style.display = 'inline-block';
   HAMBURGER.style.width = '45px';
@@ -36,7 +36,7 @@ const clickHamburger = () =>{
 }
 
 const clickScreen = (event) => {
-  if (event.target.tagName == 'A' || NAVIGATION.classList.contains('navigation-show') && !event.target.closest('.hamburger') && !event.target.closest('nav')){
+  if (event.target.tagName == 'A' && event.target.closest('.navigation__link') || NAVIGATION.classList.contains('navigation-show') && !event.target.closest('.hamburger') && !event.target.closest('nav')){
     hiddMenu();
   }
 }

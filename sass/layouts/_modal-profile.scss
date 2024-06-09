@@ -1,9 +1,9 @@
 .modal-profile{
   position: fixed;
   display: flex;
-  display: none;
+  @extend %hidden-window;
   z-index: 3;
-  top: calc(50% - 200px);
+  top: 20%;
   left: calc(50% - 300px);
   background-color: $color-light;
   .close-btn{
@@ -13,6 +13,7 @@
 }
 
 .modal-profile__name-and-avatar{
+  max-width: 170px;
   background-color: $color-dark;
   padding: 139px 25px 136px;
   @include flex($align-items: center, $just-cont: center, $direction: column);
@@ -36,6 +37,7 @@
 .modal-profile__name{
   background-color: $color-light;
   padding: 5px 15px;
+  word-break: break-all;
 }
 
 .modal-profile__content{
@@ -51,7 +53,6 @@
 
 .modal-profile__icons{
   @include flex($just-cont: start);
-  //margin: 15px 0 16px;
 }
 
 .icon-info{
@@ -79,13 +80,20 @@
 }
 
 .modal-profile__books{
+  width: 350px;
+  height: 70px;
   list-style: disc;
   padding-left: 30px;
   margin-bottom: 30px;
+  overflow: scroll;
   li{
     @include font(2rem, 2rem, 0.2rem);
+    white-space: nowrap;
     padding-bottom: 10px;
     padding-right: 38.5px;
+    &:first-letter {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -99,4 +107,10 @@
     @include font(2rem, 2rem);
     color: $color-sand;
   }
+}
+
+.icon-copy:hover{
+  transform: scale(1.2);
+  transition: all 1s ease;
+  cursor: pointer;
 }

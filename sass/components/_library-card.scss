@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.get-card{
+.get-card-info {
   width: 456px;
   text-align: end;
   @include flex($direction: column, $just-cont: flex-start, $align-items: flex-end);
@@ -34,6 +34,10 @@
     text-align: center;
     margin: 40px 0;
   }
+}
+
+.card__info_hidden{
+  display: none;
 }
 
 .card-buttons{

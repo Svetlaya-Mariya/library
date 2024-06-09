@@ -5,7 +5,7 @@
 .header__wrapper{
   @include flex($align-items: center, $just-cont: end);
   position: relative;
-  z-index: 5;
+  z-index: 2;
   @include media-tablet(){
     padding: 20px;
     //overflow: hidden;
@@ -16,3 +16,6 @@
   flex-grow: 2;
 }
 
+.header__user{
+  position: relative;
+}
