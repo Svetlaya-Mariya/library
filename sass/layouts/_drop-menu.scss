@@ -1,0 +1,61 @@
+.drop-menu{
+  width: 80px;
+  height: 115px;
+  background-color: $color-light;
+  position: absolute;
+  top: 27px;
+  right: 0px;
+  z-index: 2;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  > * {
+    display: block;
+    @include font(1.5rem, 2rem);
+    text-align: center;
+    cursor: pointer;
+  }
+  > .drop-menu__header_auth{
+    @include font(1.2rem, 2rem);
+  }
+  > a {
+    padding-top: 10px;
+  }
+}
+
+.drop-menu_show{
+  transform: scaleY(1);
+  animation: showDropMenu 1s;
+}
+.drop-menu_hidd{
+  transform: scaleY(0);
+  animation: hiddDropMenu 0.5s;
+}
+
+@keyframes showDropMenu {
+  from {
+    transform: scaleY(0);
+  }
+  to{
+    transform: scaleY(1);
+  }
+}
+
+@keyframes hiddDropMenu {
+  from {
+    transform: scaleY(1);
+  }
+  to{
+    transform: scaleY(0);
+  }
+}
+
+.drop-menu__header{
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+.drop-menu__line{
+  width: 40px;
+  margin-bottom: 5px;
+  background-color: $color-sand;
+}

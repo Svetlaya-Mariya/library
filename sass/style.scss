@@ -1,0 +1,52 @@
+@import "base/normalize";
+
+//Abstracts
+@import "abstract/constants";
+@import "abstract/placeholders";
+@import "abstract/mixins";
+
+
+//Base
+@import "base/base";
+@import "base/button";
+@import "base/input";
+@import "base/hamburger";
+@import "base/icons";
+
+
+
+//@import "base/hr";
+
+//Layouts
+@import "layouts/wrapper";
+@import "layouts/header";
+@import "layouts/navigation";
+@import "layouts/columns";
+@import "layouts/season";
+@import "layouts/book";
+@import "layouts/card";
+@import "layouts/svg-icon";
+@import "layouts/drop-menu";
+@import "layouts/modal";
+@import "layouts/modal-profile";
+@import "layouts/modal-login";
+@import "layouts/modal-buy-card";
+
+
+//Components
+@import "components/welcome";
+@import "components/about";
+@import "components/favorites";
+@import "components/coffe-shop";
+@import "components/contacts";
+@import "components/library-card";
+@import "components/footer";
+
+
+
+
+
+
+//.svg-icon{
+//  background-color: rgb(45, 218, 241);
+//}

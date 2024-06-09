@@ -1,0 +1,72 @@
+.favorites{
+  padding-bottom: 40px;
+}
+
+.favorites__pick-season{
+  @include font(2rem, normal, 0, 700);
+  text-align: left;
+}
+
+.favorites__seasons{
+  top: 20px;
+  max-width: 700px;
+  margin: 35px 0;
+  @include flex();
+  @include media-tablet(){
+    max-width: 100%;
+    top: 0;
+    margin: 0;
+    padding: 25px;
+    position: sticky;
+    background-color: white;
+    z-index: 2;
+  }
+}
+
+.favorite__books{
+  position: relative;
+}
+
+.books{
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  @include flex($wrap: wrap);
+  row-gap: 40px;
+  column-gap: 45px;
+  margin-right: 40px;
+  @include media-tablet(){
+    @include flex($wrap: wrap, $just-cont: center);
+  }
+}
+
+.books_active{
+  position: relative;
+  opacity: 1;
+}
+
+.fade-in{
+  animation: fadeIn 3s linear;
+}
+
+.books_passive{
+  animation: fadeOut 1s linear;
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

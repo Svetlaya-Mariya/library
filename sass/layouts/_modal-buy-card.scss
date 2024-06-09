@@ -1,0 +1,49 @@
+.modal-buy-card{
+  width: 640px;
+  position: fixed;
+  @extend %hidden-window;
+  z-index: 3;
+  top: 10%;
+  left: calc(50% - 325px);
+  background: $color-light;
+}
+
+.modal-buy-card__title{
+  position: relative;
+  background: $color-dark;
+  h2{
+    color: $color-light;
+    line-height: 2rem;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+  }
+  .close-btn{
+    top: 20px;
+    right: 18px;
+  }
+}
+
+.modal-buy-card__content{
+  @include flex($just-cont: space-between);
+  padding: 22px 40px 30px;
+}
+
+.modal-buy-card__text{
+  padding-left: 40px;
+  padding-top: 8px;
+  color: $color-inactive;
+  @include font(1.5rem, 2rem, 0.2rem);
+}
+
+.form-down{
+  margin-top: 20px;
+}
+
+.modal-buy-card__price{
+  display: inline-block;
+  color: $color-dark;
+  @include font(2rem, 2rem, 0.2rem, 700);
+  text-transform: uppercase;
+  margin-left: 20px;
+  vertical-align:sub;
+}

@@ -1,0 +1,41 @@
+.button{
+  width: 75px;
+  height: 30px;
+  padding: 9px 0;
+  @include font (1rem, normal, 0.1rem, 700);
+  background-color: $color-light;
+  cursor: pointer;
+  &:hover:not([disabled]){
+    color: $color-dark;
+    background-color: $color-sand;
+    border: 1px solid $color-sand;
+    @extend %transition;
+  }
+
+  &_active{
+    color: $color-dark;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+  }
+  &_disabled{
+    color: $color-sand;
+    border: 1px solid $color-sand;
+    cursor: auto;
+  }
+}
+
+.close-btn{
+  background-color: $color-light;
+  border: none;
+  padding: 5px;
+  line-height: 0;
+  position: absolute;
+  cursor: pointer;
+  &_white{
+    background-color: $color-dark;
+  }
+  img:hover{
+    @extend %transition;
+    transform: rotate(45deg);
+  }
+}

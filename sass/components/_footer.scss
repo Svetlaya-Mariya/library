@@ -1,0 +1,54 @@
+.footer{
+  background-color: $color-dark;
+  color: $color-light;
+  padding-top: 20px;
+}
+
+.footer__address, .footer__social{
+  @include flex();
+  margin-bottom: 10px;
+}
+
+.social{
+  @include flex($align-items: flex-start);
+  margin: 8px 0;
+  > li a{
+    padding: 10px 15px 10px 0;
+  }
+}
+
+
+.footer__info{
+  color: $color-light;
+  @include font(1.5rem, 2rem);
+  &_address{
+    text-align: left;
+    &:hover{
+      color: $color-sand;
+      @extend %transition;
+    }
+  }
+  &_time{
+    text-align: right;
+  }
+}
+
+.footer__hr{
+  background-color: $color-light;
+  margin-top: 25px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.footer__rss{
+  padding: 36px 0;
+  @include flex();
+  @include font(2rem, 4rem, 0.2rem);
+}
+
+.rss{
+  margin-left: 130px;
+  @include media-tablet(){
+    margin-left: 70px;
+  }
+}

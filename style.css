@@ -1,0 +1,18 @@
+/*font-family: 'Inter', sans-serif;
+#8E8E8E - grey
+#FFFFFF - white
+#BB945F - send
+#000000 - black
+#0C0C0E - dark
+*/
+
+html {
+  font-size: 10px;
+}
+body{
+  font-family: 'Forum', cursive;
+  font-size: 2rem;
+}
+.svg-icon{
+  background-color: rgb(0, 0, 0);
+}

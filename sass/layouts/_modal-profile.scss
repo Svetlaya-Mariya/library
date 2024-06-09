@@ -1,0 +1,116 @@
+.modal-profile{
+  position: fixed;
+  display: flex;
+  @extend %hidden-window;
+  z-index: 3;
+  top: 20%;
+  left: calc(50% - 300px);
+  background-color: $color-light;
+  .close-btn{
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.modal-profile__name-and-avatar{
+  max-width: 170px;
+  background-color: $color-dark;
+  padding: 139px 25px 136px;
+  @include flex($align-items: center, $just-cont: center, $direction: column);
+  font-size: 20px;
+  p {
+    @include font(2rem, 2rem);
+  }
+}
+
+.modal-profile__avatar{
+  width: 80px;
+  height: 80px;
+  background-color: $color-light;
+  @include flex($align-items: center, $just-cont: center);
+  margin-bottom: 15px;
+  p {
+    color: $color-sand;
+  }
+}
+
+.modal-profile__name{
+  background-color: $color-light;
+  padding: 5px 15px;
+  word-break: break-all;
+}
+
+.modal-profile__content{
+  padding: 0 20px;
+}
+
+.modal-profile__title{
+  padding: 30px 0;
+  text-transform: uppercase;
+  text-align: start;
+  letter-spacing: 0.08rem;
+}
+
+.modal-profile__icons{
+  @include flex($just-cont: start);
+}
+
+.icon-info{
+  margin-right: 20px;
+  @include flex($direction: column, $align-items: center);
+}
+
+.icon-info__name{
+  @include font(2rem, 2rem, 0.04rem);
+}
+
+.icon-info__svg{
+  margin: 10px 0;
+}
+
+.icon-info__digit{
+    @include font(1rem, 2rem, 0.02rem);
+}
+
+.modal-profile__rented{
+  text-align: left;
+  margin: 20px 0 30px;
+  @include font(2.5rem, 2rem);
+  color: $color-dark;
+}
+
+.modal-profile__books{
+  width: 350px;
+  height: 70px;
+  list-style: disc;
+  padding-left: 30px;
+  margin-bottom: 30px;
+  overflow: scroll;
+  li{
+    @include font(2rem, 2rem, 0.2rem);
+    white-space: nowrap;
+    padding-bottom: 10px;
+    padding-right: 38.5px;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.modal-profile__card-number{
+  text-align: left;
+  @include font(2rem, 2rem);
+  color: $color-dark;
+  span {
+    display: inline-block;
+    padding: 0 15px;
+    @include font(2rem, 2rem);
+    color: $color-sand;
+  }
+}
+
+.icon-copy:hover{
+  transform: scale(1.2);
+  transition: all 1s ease;
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+.column-3-items{
+  @include flex();
+  //overflow: hidden;
+  //column-gap: 25px;
+  > *:not(:first-child) {
+    //padding-left: 25px;
+  }
+}
+
+.column-2-items{
+  @include flex(wrap);
+}
