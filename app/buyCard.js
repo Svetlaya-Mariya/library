@@ -16,14 +16,13 @@ const bankCity = document.querySelector('#bank-card-city');
 // ввод номера карты
 const enterBankCardNumber = (input) => {
   let inputLenght = input.value.length+1;
-  input.value = input.value.replace(/[^\d\s]/g, "");
+  input.value = input.value.replace(/[^\d\s]/g, '');
   if (inputLenght == 5 || inputLenght == 10 || inputLenght == 15){
     input.value += ' ';
   }
 }
 
 bankCardNumber.addEventListener('keyup', (event) => enterBankCardNumber(event.target));
-//bankCardNumber.addEventListener('change', (event) => checkedBankCardNumber(event.target));
 
 const activeBuy = () => {
     let cardNumber = bankCardNumber.value;
@@ -33,7 +32,6 @@ const activeBuy = () => {
       return;
     }
     if (codeMonth.value == ""){
-      console.log(codeMonth.value)
       document.querySelector('#button-buy-card').setAttribute('disabled','')
       return;
     }
@@ -45,7 +43,7 @@ const activeBuy = () => {
       document.querySelector('#button-buy-card').setAttribute('disabled','')
       return;
     }
-    if (bankHoldername.value == "" || (/[^A-Za-z]/).test(bankHoldername.value)){
+    if (bankHoldername.value == "" || (/[^A-Za-z]\s/).test(bankHoldername.value)){
       document.querySelector('#button-buy-card').setAttribute('disabled','')
       return;
     }
@@ -67,13 +65,11 @@ for (const input of bankCardInputs){
 
 const buyCardTrue = (event) => {
   event.preventDefault();
-  console.log('you buy the card');
   MODAL.classList.remove('open');
   modalBuyCard.classList.remove('open-window');
   const currentUser = JSON.parse(localStorage.user);
   currentUser.buyCard = true;
   localStorage.setItem('user', JSON.stringify(currentUser));
-  console.log(currentUser);
 }
 
 export function buyCard(){
