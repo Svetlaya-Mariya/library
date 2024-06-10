@@ -58,7 +58,6 @@ const userLogIn = {
   ownBooks: []
 }
 
-//let countVisit;
 const capitalizeWords = str => str.replace(/\b\w/g, c => c.toUpperCase());
 //открытие и закрытие окон регистрации и log in
 const openRegistrationWindow = () => {
@@ -77,7 +76,6 @@ const openProfileWindow = () => {
 }
 
 const openBuycadrWindow = () => {
-  console.log('buy card');
   MODAL.classList.add('open');
   modalBuyCard.classList.add('open-window');
 }
@@ -181,6 +179,7 @@ const showStatistics = () => {
         const person = JSON.parse(localStorage.user);
         if (inputCardName.value === person.firstName + ' ' + person.lastName && inputCardNumber.value === person.cardNumber){
           document.querySelectorAll('#count-visit').forEach(item => item.innerText = person.countVisit);
+          document.querySelectorAll('#count-books').forEach(item => item.innerText = person.countBooks);
           changeLibraryCard(libCardProfileBtn);
           setTimeout(() => {
             changeLibraryCard(libCardProfileBtn);
@@ -221,7 +220,6 @@ const registretionUser = (event) => {
 const authorizationUser = (event) => {
   if (loginName.value && loginPassword.value){
     const currentUser = JSON.parse(localStorage.user);
-    console.log(currentUser);
     if ((loginName.value === currentUser.email || loginName.value === currentUser.cardNumber) && loginPassword.value === currentUser.password) {
       event.preventDefault();
       MODAL.classList.remove('open');
