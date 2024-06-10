@@ -18,7 +18,6 @@ function changePoint(index){
 function showSlide(){
     slideWidth = carousel.offsetWidth;
     if (slideWidth > 969 & currentPoint > 2){
-      console.log('more 1024');
       currentPoint = 2;
       changePoint(2)
     }
